@@ -1,10 +1,20 @@
 package com.tutorial.springboot.model;
 
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Travel")
 public class Travel {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public int id;
+
+    @Column(name = "traveller_name")
     public String travellerName;
+
+    @Column
     public String country;
 
     public int getId() {

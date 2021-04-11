@@ -1,28 +1,25 @@
 package com.tutorial.springboot.daoimpl;
 
 import com.tutorial.springboot.model.Travel;
+import com.tutorial.springboot.repository.TravelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
+import java.util.List;
 
 @Component
 public class TravelImpl {
-    public HashMap<Integer, Travel> getTravelData() {
 
-        HashMap<Integer, Travel> map = new HashMap<>();
+    @Autowired
+    private TravelRepository travelRepository;
 
-        map.put(1, travelValues(1, "anusha", "usa"));
-        map.put(2, travelValues(2, "yash", "usa"));
-
-        return map;
+    public List<Travel> getAllTravelData() {
+        return travelRepository.findAll();
     }
 
-    public Travel travelValues(int id, String travellerName, String country) {
-        Travel travel = new Travel();
-        travel.setId(id);
-        travel.setTravellerName(travellerName);
-        travel.setCountry(country);
-        return travel;
+    public Travel getTravelDetailsById(int id) {
+        return travelRepository.findById(id);
     }
+
 }

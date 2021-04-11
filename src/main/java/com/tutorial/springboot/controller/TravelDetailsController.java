@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 
 @RestController
 public class TravelDetailsController {
@@ -16,14 +17,14 @@ public class TravelDetailsController {
 
     // Retrieves list of travel information
     @GetMapping
-    public HashMap<Integer, Travel> getAllTravelDetails() {
-        return travelImpl.getTravelData();
+    public List<Travel> getAllTravelDetails() {
+        return travelImpl.getAllTravelData();
 
     }
 
     // Retrives Travel information based on id
     @GetMapping(value = "/{id}")
     public Travel getTravelDetailsById(@PathVariable("id") int id) {
-        return travelImpl.getTravelData().get(id);
+        return travelImpl.getTravelDetailsById(id);
     }
 }
