@@ -4,7 +4,7 @@ import com.tutorial.springboot.model.Travel;
 
 import java.util.List;
 
-public interface TravelImplRepository {
+public interface TravelService {
 
     List<Travel> getAllTravelData();
 

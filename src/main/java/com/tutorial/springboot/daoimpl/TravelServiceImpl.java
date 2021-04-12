@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class TravelImpl implements TravelImplRepository {
+public class TravelServiceImpl implements TravelService {
 
     @Autowired
     private TravelRepository travelRepository;
@@ -27,10 +27,8 @@ public class TravelImpl implements TravelImplRepository {
     }
 
     public Travel updateTraveller(Travel travel, int id) {
-        Travel updateDetails = travelRepository.findById(id);
-        updateDetails.setTravellerName(travel.getTravellerName());
-        updateDetails.setCountry(travel.getCountry());
-        return updateDetails;
+        travel.setId(id);
+        return travelRepository.save(travel);
     }
 
 }
