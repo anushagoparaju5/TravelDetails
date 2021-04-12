@@ -1,6 +1,5 @@
 package com.tutorial.springboot.model;
 
-
 import javax.persistence.*;
 
 @Entity

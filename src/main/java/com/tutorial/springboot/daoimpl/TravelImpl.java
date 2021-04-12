@@ -4,12 +4,12 @@ import com.tutorial.springboot.model.Travel;
 import com.tutorial.springboot.repository.TravelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
 import java.util.List;
 
-@Component
-public class TravelImpl {
+@Service
+public class TravelImpl implements TravelImplRepository {
 
     @Autowired
     private TravelRepository travelRepository;
