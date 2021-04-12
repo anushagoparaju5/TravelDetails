@@ -1,12 +1,8 @@
 DROP TABLE IF EXISTS Travel;
 
 CREATE TABLE Travel (
-  id INT AUTO_INCREMENT  PRIMARY KEY,
+  id INT  PRIMARY KEY NOT NULL,
   traveller_name VARCHAR(250) NOT NULL,
-  country VARCHAR(250)
+  country VARCHAR(500)
 );
 
-INSERT INTO Travel (traveller_name, country) VALUES
-  ('Aliko', 'Dangote'),
-  ('Bill', 'Gates'),
-  ('Folrunsho', 'Alakija');
