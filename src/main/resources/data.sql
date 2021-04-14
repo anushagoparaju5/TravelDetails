@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS Travel;
+
+CREATE TABLE travel (
+  id INT  PRIMARY KEY NOT NULL,
+  traveller_name VARCHAR(250) NOT NULL,
+  country VARCHAR(500)
+);
+
